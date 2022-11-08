@@ -1,0 +1,12 @@
+.services-container {
+    width: 1400px;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+    .services-container {
+        width: 90%;
+    }
+
+}

@@ -6,7 +6,7 @@ import { HiMail } from "react-icons/hi";
 
 const Header = () => {
     const navLink = <>
-        <li><Link>Services</Link></li>
+        <li><Link to='/services'>Services</Link></li>
         <li><Link>Blog</Link></li>
         <li><Link>Review</Link></li>
 
@@ -35,7 +35,7 @@ const Header = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl">Cake & Craft</Link>
+                    <Link className="btn btn-ghost normal-case text-xl" to='/'>Cake & Craft</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
