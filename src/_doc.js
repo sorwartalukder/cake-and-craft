@@ -24,3 +24,12 @@ tailwind
 daisyUi
 react icon
 */
+
+/*
+https://ibb.co/rx6Ryxm
+https://ibb.co/MchZF0Z
+https://ibb.co/9gYgstF
+https://ibb.co/bvZ5hNR
+https://ibb.co/vYC09XP
+https://ibb.co/3CqMRvJ
+*/

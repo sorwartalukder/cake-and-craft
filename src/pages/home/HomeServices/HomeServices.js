@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { HiArrowNarrowRight } from 'react-icons/hi';
+import { Link, useLoaderData } from 'react-router-dom';
 import Service from '../../Serviecs/Service/Service';
 
 
@@ -15,6 +16,9 @@ const HomeServices = () => {
                         service={service}
                     ></Service>)
                 }
+            </div>
+            <div className='text-center'>
+                <Link to='/services'><button className="btn btn-active btn-primary text-lg mt-5 px-12">See All<HiArrowNarrowRight className='ml-3 text-white' /></button></Link>
             </div>
         </div>
     );
