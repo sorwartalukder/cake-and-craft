@@ -22,4 +22,5 @@ firebase
 react-router
 tailwind
 daisyUi
+react icon
 */
