@@ -1,0 +1,15 @@
+.contract-items {
+    padding: 20px;
+    display: none;
+}
+
+.contract-item {
+    margin-right: 5px;
+}
+
+@media screen and (min-width: 600px) {
+    .contract-items {
+        display: block;
+    }
+
+}
