@@ -20,9 +20,9 @@ const routes = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/services')
             },
             {
-                path: '/services/details/:id',
+                path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: (params) => fetch(`http://localhost:5000/services/details/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             }
         ]
     }
