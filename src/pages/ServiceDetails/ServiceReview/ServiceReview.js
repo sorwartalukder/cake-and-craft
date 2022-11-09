@@ -3,6 +3,7 @@ import { HiStar } from 'react-icons/hi';
 
 const ServiceReview = ({ service }) => {
     const [ratings, setRatings] = useState(0)
+    console.log(service)
     const { _id, title, img, description, price, ingredient } = service;
     const stars = [1, 2, 3, 4, 5];
 

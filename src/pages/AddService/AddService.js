@@ -18,6 +18,26 @@ const AddService = () => {
         const ingredient7 = form.ingredient7.value;
 
         const description = form.description.value;
+
+        const service = {
+            title: serviceName,
+            img: serviceImage,
+            price,
+            description,
+            ingredient: [ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7]
+        }
+        fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(service)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+
     }
 
     return (
