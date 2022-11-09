@@ -6,7 +6,7 @@ import Service from './Service/Service';
 const Services = () => {
     const services = useLoaderData()
     return (
-        <div>
+        <div className='mb-40'>
             <h1 className='text-center text-4xl mt-8 py-4'>Total services: {services.length}</h1>
             <div className='grid lg:grid-cols-3 gap-20 services-container'>
                 {

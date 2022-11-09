@@ -5,9 +5,9 @@ import { HiChatAlt2, HiCheckCircle } from 'react-icons/hi';
 
 const ServicesSpecialty = () => {
     return (
-        <div>
+        <div className='my-40'>
             <h2 className='text-center font-bold text-4xl my-6'>Service Specialty</h2>
-            <div className='grid lg:grid-cols-3 services-container  shadow-lg'>
+            <div className='grid lg:grid-cols-3 services-container'>
                 <div className="bg-white text-black">
                     <div className=' flex justify-center '>
                         <HiCheckCircle className='specialy-icon' />

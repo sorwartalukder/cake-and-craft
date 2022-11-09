@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import ServiceReview from './ServiceReview/ServiceReview';
 
 const ServiceDetails = () => {
     const service = useLoaderData();
@@ -27,6 +28,7 @@ const ServiceDetails = () => {
                     <Link ><button className="badge badge-outline px-10 py-5 text-2xl font-bold  text-blue-900 my-5 ">Buy Now</button></Link>
                 </div>
             </div>
+            <ServiceReview service={service} />
         </div>
     );
 };

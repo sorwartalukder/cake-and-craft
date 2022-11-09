@@ -3,11 +3,10 @@ import ImgAbout from '../../../assets/images/cake & craft.png'
 
 const HomeAbout = () => {
     return (
-        <div className='services-container py-24 '>
+        <div className='services-container py-24'>
             <div className="bg-white text-black rounded-lg ">
                 <div className=' flex justify-center '>
                     <img className='w-1/4' src={ImgAbout} alt="" />
-                    {/* <HiCheckCircle className='specialy-icon' /> */}
                 </div>
                 <hr style={{ border: '2px solid' }} />
                 <div className="mt-6 p-5" style={{ textAlign: 'justify' }}>
