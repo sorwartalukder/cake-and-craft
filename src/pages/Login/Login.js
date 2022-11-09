@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Header from '../shared/Header/Header';
 
 const Login = () => {
+    const { login } = useContext(AuthContext)
+
+    const navigate = useNavigate()
+
+    const handleLogin = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        login(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate('/')
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+            });
+
+    }
     return (
         <div>
             <Header />
             <div className='services-container '>
                 <div className='w-11/12 md:w-2/3 lg:w-1/3 mx-auto my-24 bg-gray-900 p-16 text-white rounded-xl'>
-                    <form >
+                    <form onSubmit={handleLogin}>
                         <div >
                             <h2 className="text-4xl pb-8 text-center font-semibold text-blue-500">Log In</h2>
                             <div className='grid grid-cols-1 gap-4'>

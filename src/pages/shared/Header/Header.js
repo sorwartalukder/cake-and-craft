@@ -6,13 +6,22 @@ import { HiMail } from "react-icons/hi";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const navLink = <>
         <li><Link to='/services'>Services</Link></li>
         <li><Link>Blog</Link></li>
         <li><Link>Review</Link></li>
 
     </>
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                console.error(error)
+            });
+    }
 
     return (
         <div>
@@ -47,9 +56,9 @@ const Header = () => {
                 <div className="navbar-end">
                     {
                         user?.uid ?
-                            <button className='btn'>Log Out</button>
+                            <button onClick={handleLogOut} className='btn'>Log Out</button>
                             :
-                            <Link to='/login' className="btn btn-warning">Log In</Link>
+                            <Link to='/login' className="btn btn-active btn-primary">Log In</Link>
                     }
                 </div>
             </div>
