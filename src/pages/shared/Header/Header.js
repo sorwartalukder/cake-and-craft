@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaUser } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
@@ -60,7 +60,14 @@ const Header = () => {
                                 <button onClick={handleLogOut} className='btn'>Log Out</button>
                                 <div className="avatar online mx-4">
                                     <div className="w-16 rounded-full ring ring-primary">
-                                        <img src={user?.photoURL} alt='' />
+
+                                        {
+                                            user?.photoURL ?
+                                                <img src={user?.photoURL} alt='' />
+                                                :
+                                                <p className='text-6xl'><FaUser /></p>
+
+                                        }
                                     </div>
                                 </div>
                             </>

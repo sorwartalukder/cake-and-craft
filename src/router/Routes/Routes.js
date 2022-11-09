@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import AddService from "../../pages/AddService/AddService";
 import Home from "../../pages/home/Home/Home";
 import Login from "../../pages/Login/Login";
+import NotFound from "../../pages/NotFound/NotFound";
 import Register from "../../pages/Register/Register";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Serviecs/Services";
@@ -12,6 +13,7 @@ const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <NotFound></NotFound>,
         children: [
             {
                 path: '/',

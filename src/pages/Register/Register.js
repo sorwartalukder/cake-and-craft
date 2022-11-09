@@ -42,7 +42,7 @@ const Register = () => {
                             <h2 className="text-4xl pb-8 text-center font-semibold text-blue-500">Register</h2>
                             <div className='grid grid-cols-1 gap-4'>
                                 <input required name='name' type="text" placeholder="Your Name" className="input input-ghost w-full input-bordered " />
-                                <input required name='photoURL' type="text" placeholder="Your Photo URL" className="input input-ghost w-full input-bordered " />
+                                <input name='photoURL' type="text" placeholder="Your Photo URL" className="input input-ghost w-full input-bordered " />
                                 <input required name='email' type="email" placeholder="Your Email" className="input input-ghost w-full input-bordered " />
                                 <input required name='password' type="password" placeholder="Your Password" className="input input-ghost w-full input-bordered " />
                             </div>
