@@ -25,7 +25,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch((error) => {
-                const errorMessage = error.message;
+                // const errorMessage = error.message;
             });
     }
 
@@ -36,7 +36,7 @@ const Login = () => {
                 console.log(user)
                 navigate(from, { replace: true })
             }).catch((error) => {
-                const errorMessage = error.message;
+                // const errorMessage = error.message;
             });
 
     }
@@ -51,8 +51,8 @@ const Login = () => {
                         <div >
                             <h2 className="text-4xl pb-8 text-center font-semibold text-blue-500">Log In</h2>
                             <div className='grid grid-cols-1 gap-4'>
-                                <input name='email' type="email" placeholder="Your Email" className="input input-ghost w-full input-bordered " />
-                                <input name='password' type="password" placeholder="Your Password" className="input input-ghost w-full input-bordered " />
+                                <input required name='email' type="email" placeholder="Your Email" className="input input-ghost w-full input-bordered " />
+                                <input required name='password' type="password" placeholder="Your Password" className="input input-ghost w-full input-bordered " />
                             </div>
                             <input className='btn btn-active btn-primary mt-8 block mx-auto px-14' type="submit" value="login" />
                         </div>

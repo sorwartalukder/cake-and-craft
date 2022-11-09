@@ -8,11 +8,10 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     const navLink = <>
-        <li><Link to='/services'>Items</Link></li>
+        <li><Link to='/services'>Services</Link></li>
         <li><Link>Blog</Link></li>
         <li><Link>My Review</Link></li>
-        <li><Link to='/addItem'>Add Item</Link></li>
-
+        <li><Link to='/addService'>Add Service</Link></li>
     </>
 
     const handleLogOut = () => {
@@ -37,7 +36,7 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-yellow-600 text-white">
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -61,7 +60,7 @@ const Header = () => {
                                 <button onClick={handleLogOut} className='btn'>Log Out</button>
                                 <div className="avatar online mx-4">
                                     <div className="w-16 rounded-full ring ring-primary">
-                                        <img src={user?.photoURL} />
+                                        <img src={user?.photoURL} alt='' />
                                     </div>
                                 </div>
                             </>

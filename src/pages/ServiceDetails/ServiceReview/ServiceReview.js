@@ -30,7 +30,7 @@ const ServiceReview = ({ service }) => {
                             }
                         </div>
                     </div>
-                    <textarea name='message' className="textarea textarea-bordered h-24 w-full mt-4" placeholder="Your message" >
+                    <textarea required name='message' className="textarea textarea-bordered h-24 w-full mt-4" placeholder="Your message" >
                     </textarea>
 
                     <input className='btn btn-active btn-primary px-14 block mx-auto' type="submit" value="feedback" />
