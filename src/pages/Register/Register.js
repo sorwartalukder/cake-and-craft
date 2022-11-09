@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Header from '../shared/Header/Header';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const handleRegister = event => {
         event.preventDefault()
@@ -13,10 +13,18 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        const profile = {
+            displayName: name,
+            photoURL
+        }
         createUser(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user)
+                // const user = result.user;
+                updateUser(profile)
+                    .then(() => {
+                    }).catch((error) => {
+                        console.error(error)
+                    });
                 navigate('/')
             })
             .catch((error) => {
