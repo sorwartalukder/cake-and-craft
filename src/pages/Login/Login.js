@@ -1,13 +1,17 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Header from '../shared/Header/Header';
 
 const Login = () => {
-    const { login } = useContext(AuthContext)
+    const { login, loginWithGoogle } = useContext(AuthContext)
 
+    const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
         event.preventDefault()
@@ -18,16 +22,29 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;
             });
+    }
+
+    const handleLoginWithGoogle = () => {
+        loginWithGoogle(googleProvider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+                navigate(from, { replace: true })
+            }).catch((error) => {
+                const errorMessage = error.message;
+            });
 
     }
+
+
     return (
         <div>
-            <Header />
+            <Header></Header>
             <div className='services-container '>
                 <div className='w-11/12 md:w-2/3 lg:w-1/3 mx-auto my-24 bg-gray-900 p-16 text-white rounded-xl'>
                     <form onSubmit={handleLogin}>
@@ -42,7 +59,7 @@ const Login = () => {
                     </form>
                     <div className=' text-center mt-9 '>
                         <p className='font-bold mb-2'>Or Sign In with</p>
-                        <button className="btn btn-circle btn-light">
+                        <button onClick={handleLoginWithGoogle} className="btn btn-circle btn-light">
                             <FaGoogle className='text-2xl text-blue-500' />
                         </button>
                     </div>

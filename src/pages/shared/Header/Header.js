@@ -8,9 +8,10 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     const navLink = <>
-        <li><Link to='/services'>Services</Link></li>
+        <li><Link to='/services'>Items</Link></li>
         <li><Link>Blog</Link></li>
-        <li><Link>Review</Link></li>
+        <li><Link>My Review</Link></li>
+        <li><Link to='/addItem'>Add Item</Link></li>
 
     </>
 
@@ -56,7 +57,14 @@ const Header = () => {
                 <div className="navbar-end">
                     {
                         user?.uid ?
-                            <button onClick={handleLogOut} className='btn'>Log Out</button>
+                            <>
+                                <button onClick={handleLogOut} className='btn'>Log Out</button>
+                                <div className="avatar online mx-4">
+                                    <div className="w-16 rounded-full ring ring-primary">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </div>
+                            </>
                             :
                             <Link to='/login' className="btn btn-active btn-primary">Log In</Link>
                     }
