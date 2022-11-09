@@ -17,7 +17,7 @@ const ServiceReview = ({ service }) => {
             <hr style={{ border: '3px solid' }} />
 
             <div className=' mt-11' style={{ width: '250px' }}>
-                <form onClick={handleReviews}>
+                <form onSubmit={handleReviews}>
                     <h2 className="text-3xl font-semibold">Review</h2>
                     <div className='flex text-xl mt-4'>
                         <h6 className='mr-3'>Ratings: </h6>

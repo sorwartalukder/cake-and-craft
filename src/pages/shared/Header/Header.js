@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext)
     const navLink = <>
         <li><Link to='/services'>Services</Link></li>
         <li><Link>Blog</Link></li>
@@ -43,7 +45,12 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login' className="btn">Log In</Link>
+                    {
+                        user?.uid ?
+                            <button className='btn'>Log Out</button>
+                            :
+                            <Link to='/login' className="btn btn-warning">Log In</Link>
+                    }
                 </div>
             </div>
         </div>
