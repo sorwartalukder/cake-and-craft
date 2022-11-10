@@ -4,7 +4,7 @@ import { HiStar } from 'react-icons/hi';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
-const ServiceReviews = ({ service }) => {
+const ServiceReviews = ({ service, setNewReview }) => {
     const { user } = useContext(AuthContext)
     const [ratings, setRatings] = useState(0)
 
@@ -33,7 +33,7 @@ const ServiceReviews = ({ service }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    // setServiceReviews([review, ...serviceReviews])
+                    setNewReview(review)
                     event.target.reset()
                 }
                 console.log(data)

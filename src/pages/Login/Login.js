@@ -3,9 +3,12 @@ import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useSetTitle from '../../hooks/useSetTitle';
 import Header from '../shared/Header/Header';
 
 const Login = () => {
+    useSetTitle('Log In - Cake & Craft')
+
     const { login, loginWithGoogle } = useContext(AuthContext)
 
     const googleProvider = new GoogleAuthProvider();

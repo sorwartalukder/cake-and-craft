@@ -9,10 +9,10 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     const navLink = <>
         <li><Link to='/services'>Services</Link></li>
-        <li><Link>Blog</Link></li>
+        <li><Link to='/blogs'> Blogs</Link></li>
         {user ?
             <>
-                <li><Link to='/userReviews'>My Review</Link></li>
+                <li><Link to='/userReviews'>My Reviews</Link></li>
                 <li><Link to='/addService'>Add Service</Link></li>
             </>
             :

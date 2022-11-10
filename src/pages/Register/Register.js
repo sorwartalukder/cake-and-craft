@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useSetTitle from '../../hooks/useSetTitle';
 import Header from '../shared/Header/Header';
 
 const Register = () => {
+    useSetTitle('Register - Cake & Craft')
+
     const { createUser, updateUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const handleRegister = event => {

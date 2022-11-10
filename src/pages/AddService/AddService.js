@@ -1,7 +1,9 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import useSetTitle from '../../hooks/useSetTitle';
 
 const AddService = () => {
+    useSetTitle('Add Service - Cake & Craft')
 
     const handleAddItem = event => {
         event.preventDefault()

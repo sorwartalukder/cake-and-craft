@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useSetTitle from '../../hooks/useSetTitle';
 import ServiceReview from './ServiceReview/ServiceReview';
 import ServiceReviews from './ServiceReviews/ServiceReviews';
 
 const ServiceDetails = () => {
+    useSetTitle('Service Details - Cake & Craft')
+
     const { user } = useContext(AuthContext)
     const [serviceReviews, setServiceReviews] = useState([])
     const service = useLoaderData();
@@ -18,6 +21,10 @@ const ServiceDetails = () => {
                 setServiceReviews(data)
             })
     }, [_id])
+
+    const setNewReview = (review) => {
+        setServiceReviews([review, ...serviceReviews])
+    }
     return (
         <div className='services-container pt-10'>
             <div className="w-full">
@@ -47,7 +54,7 @@ const ServiceDetails = () => {
 
                 {
                     user ?
-                        <ServiceReviews service={service}></ServiceReviews>
+                        <ServiceReviews service={service} setNewReview={setNewReview}></ServiceReviews>
                         :
                         <div className='my-2'>
                             <h4 className="text-2xl font-semibold"> Please login to add a review.</h4>
@@ -59,8 +66,9 @@ const ServiceDetails = () => {
 
                     {
                         serviceReviews.map(serviceReview => <ServiceReview
-                            key={serviceReview._id}
+                            key={serviceReview._id || 1}
                             serviceReview={serviceReview}
+
                         ></ServiceReview>)
                     }
                 </div>
