@@ -2,20 +2,24 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { HiStar } from 'react-icons/hi';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import ServiceReview from '../ServiceReview/ServiceReview';
+
 
 const ServiceReviews = ({ service }) => {
     const { user } = useContext(AuthContext)
     const [ratings, setRatings] = useState(0)
-    const [serviceReviews, setServiceReviews] = useState([])
-    const { _id } = service;
+
+    const { _id, title } = service;
     const stars = [1, 2, 3, 4, 5];
     const handleReviews = event => {
         event.preventDefault()
         const feedback = event.target.message.value;
         const review = {
+            serviceName: title,
             serviceId: _id,
             userId: user.uid,
+            userEmail: user.email || '',
+            userName: user.displayName || '',
+            userPhotoURL: user.photoURL || '',
             feedback,
             ratings
         }
@@ -29,27 +33,17 @@ const ServiceReviews = ({ service }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
+                    // setServiceReviews([review, ...serviceReviews])
                     event.target.reset()
                 }
                 console.log(data)
             })
     }
-    useEffect(() => {
-        console.log()
-        fetch(`http://localhost:5000/reviews/${_id}`)
-            .then(res => res.json())
-            .then(data => {
-                setServiceReviews(data)
-            })
-    }, [_id])
-
     return (
-        <div className='services-container py-24'>
-            <hr style={{ border: '3px solid' }} />
+        <div className='services-container pb-5'>
 
             <div className=' mt-11' style={{ width: '250px' }}>
                 <form onSubmit={handleReviews}>
-                    <h2 className="text-3xl font-semibold">Review</h2>
 
                     <div className='flex items-center'>
                         <div className="avatar online mt-4">
@@ -61,7 +55,6 @@ const ServiceReviews = ({ service }) => {
                                         <p className='text-5xl'><FaUser /></p>
 
                                 }
-                                {/* <img src={user?.photoURL} alt='' /> */}
                             </div>
                         </div>
                         <h5 className='text-xl font-semibold mt-3 ml-4'>{user.displayName}</h5>
@@ -86,16 +79,6 @@ const ServiceReviews = ({ service }) => {
             </div>
 
 
-            <div>
-                {
-                    serviceReviews.map(serviceReview => <ServiceReview
-                        key={serviceReview._id}
-                        serviceReview={serviceReview}
-
-                    ></ServiceReview>)
-                }
-
-            </div>
         </div>
     );
 };

@@ -10,8 +10,14 @@ const Header = () => {
     const navLink = <>
         <li><Link to='/services'>Services</Link></li>
         <li><Link>Blog</Link></li>
-        <li><Link>My Review</Link></li>
-        <li><Link to='/addService'>Add Service</Link></li>
+        {user ?
+            <>
+                <li><Link to='/userReviews'>My Review</Link></li>
+                <li><Link to='/addService'>Add Service</Link></li>
+            </>
+            :
+            ''
+        }
     </>
 
     const handleLogOut = () => {

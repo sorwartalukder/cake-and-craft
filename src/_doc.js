@@ -23,6 +23,8 @@ react-router
 tailwind
 daisyUi
 react icon
+ react-photo-view
+ toast
 */
 
 /*
