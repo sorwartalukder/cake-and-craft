@@ -15,7 +15,7 @@ const ServiceDetails = () => {
 
     useEffect(() => {
         console.log()
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://cake-and-craft-server.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setServiceReviews(data)

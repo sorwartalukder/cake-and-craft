@@ -21,7 +21,7 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/services/home')
+                loader: () => fetch('https://cake-and-craft-server.vercel.app/services/home')
             },
             {
                 path: '/services',
@@ -30,7 +30,7 @@ const routes = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://cake-and-craft-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/addService',
@@ -57,8 +57,8 @@ const routes = createBrowserRouter([
     },
     {
         path: '/update/review/:id',
-        element: <UpdateReview></UpdateReview>,
-        loader: ({ params }) => fetch(`http://localhost:5000/update/review/${params.id}`)
+        element: <PrivateRoutes><UpdateReview></UpdateReview></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://cake-and-craft-server.vercel.app/update/review/${params.id}`)
     }
 
 ])

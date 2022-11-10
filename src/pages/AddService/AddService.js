@@ -29,7 +29,7 @@ const AddService = () => {
             description,
             ingredient: [ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7]
         }
-        fetch('http://localhost:5000/services', {
+        fetch('https://cake-and-craft-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

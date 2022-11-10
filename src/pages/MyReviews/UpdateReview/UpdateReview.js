@@ -12,7 +12,7 @@ const UpdateReview = () => {
         event.preventDefault()
         const feedback = event.target.feedback.value;
 
-        fetch(`http://localhost:5000/update/review/${_id}`, {
+        fetch(`https://cake-and-craft-server.vercel.app/update/review/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

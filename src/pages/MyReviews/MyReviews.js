@@ -13,7 +13,11 @@ const MyReviews = () => {
     useSetTitle('My Reviews- Cake & Craft')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userReviews/${user?.uid}`)
+        fetch(`https://cake-and-craft-server.vercel.app/userReviews/${user?.uid}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('cake-and-craft-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setUserReviews(data)
@@ -22,7 +26,7 @@ const MyReviews = () => {
     }, [user?.uid])
 
     const handleDeleteReview = (id) => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://cake-and-craft-server.vercel.app/reviews/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

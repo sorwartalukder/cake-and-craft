@@ -23,7 +23,7 @@ const ServiceReviews = ({ service, setNewReview }) => {
             feedback,
             ratings
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://cake-and-craft-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

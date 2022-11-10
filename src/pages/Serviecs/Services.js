@@ -9,7 +9,7 @@ const Services = () => {
     useSetTitle('Services - Cake & Craft')
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://cake-and-craft-server.vercel.app/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data)
