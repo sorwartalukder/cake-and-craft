@@ -23,8 +23,8 @@ const MyReview = ({ userReview, handleDeleteReview }) => {
                 <h5 className='font-semibold  '>Service: {serviceName}</h5>
                 <p>{feedback}</p>
                 <div className="card-actions justify-end py-2">
-                    <Link to={`/update/review/${_id}`} className="btn btn-primary">Update</Link>
-                    <button onClick={() => handleDeleteReview(_id)} className="btn bg-red-700">Delete</button>
+                    <Link to={`/dashboard/update/review/${_id}`} className="btn btn-primary bg-gradient-to-r from-slate-900 to-yellow-600 border-0 btn-sm text-white">Update</Link>
+                    <button onClick={() => handleDeleteReview(_id)} className="btn btn-sm btn-error">Delete</button>
                 </div>
             </div>
         </div>

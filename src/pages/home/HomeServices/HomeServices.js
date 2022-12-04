@@ -18,7 +18,7 @@ const HomeServices = () => {
                 }
             </div>
             <div className='text-center'>
-                <Link to='/services'><button className="btn btn-active btn-primary text-lg mt-5 px-12">See All<HiArrowNarrowRight className='ml-3 text-white' /></button></Link>
+                <Link to='/services'><button className="btn bg-gradient-to-r from-slate-900 to-yellow-600 border-0 text-lg mt-5 px-12">See All<HiArrowNarrowRight className='ml-3 text-white' /></button></Link>
             </div>
         </div>
     );

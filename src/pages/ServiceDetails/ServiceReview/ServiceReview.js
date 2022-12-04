@@ -2,7 +2,7 @@ import React from 'react';
 import { FaUser } from 'react-icons/fa';
 
 const ServiceReview = ({ serviceReview }) => {
-    const { _id, feedback, userName, userPhotoURL } = serviceReview;
+    const { feedback, userName, userPhotoURL } = serviceReview;
     return (
         <div className='mt-5'>
             <div className="avatar online ">

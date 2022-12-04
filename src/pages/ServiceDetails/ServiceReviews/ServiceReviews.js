@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { HiStar } from 'react-icons/hi';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';

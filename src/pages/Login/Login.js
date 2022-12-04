@@ -23,7 +23,7 @@ const Login = () => {
         const password = form.password.value;
         login(email, password)
             .then(result => {
-                const user = result.user;
+                // const user = result.user;
                 navigate(from, { replace: true })
             })
             .catch((error) => {

@@ -8,15 +8,10 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     const navLink = <>
+        <li><Link to='/'>Home</Link></li>
         <li><Link to='/services'>Services</Link></li>
         <li><Link to='/blogs'> Blogs</Link></li>
-        {user ?
-            <>
-                <li><Link to='/userReviews'>My Reviews</Link></li>
-                <li><Link to='/addService'>Add Service</Link></li>
-            </>
-            :
-            ''
+        {user && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
     </>
 
@@ -32,7 +27,7 @@ const Header = () => {
     return (
         <div>
             <div >
-                <div className=" contract-items bg-slate-900 text-green-400">
+                <div className=" contract-items bg-slate-900 text-yellow-500">
                     <ul className="flex justify-between">
                         <li className='flex items-center text-xl'><FaPhoneAlt className='contract-item mt-1 text-2xl' />+880 1753-931201
                         </li>
@@ -63,7 +58,7 @@ const Header = () => {
                     {
                         user?.uid ?
                             <>
-                                <button onClick={handleLogOut} className='btn'>Log Out</button>
+                                <button onClick={handleLogOut} className="btn btn-active btn-primary">Log Out</button>
                                 <div className="avatar online mx-4">
                                     <div className="w-16 rounded-full ring ring-primary">
 

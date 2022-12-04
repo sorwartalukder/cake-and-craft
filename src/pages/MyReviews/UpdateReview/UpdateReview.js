@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
-import Header from '../../shared/Header/Header';
 
 const UpdateReview = () => {
     const review = useLoaderData()
@@ -21,13 +20,12 @@ const UpdateReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                navigate('/userReviews')
+                navigate('/dashboard/userReviews')
             })
 
     }
     return (
         <div>
-            <Header />
             <div className='w-11/12 md:w-2/3 lg:w-1/3 mx-auto my-24 bg-gray-900 p-16 text-white rounded-xl'>
 
                 <form onSubmit={handleUpdateReview}>

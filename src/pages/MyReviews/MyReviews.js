@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useSetTitle from '../../hooks/useSetTitle';
-import Header from '../shared/Header/Header';
 import MyReview from './MyReview';
 
 const MyReviews = () => {
@@ -43,7 +42,6 @@ const MyReviews = () => {
 
     return (
         <div>
-            <Header />
             {
                 isLoading ?
                     <>

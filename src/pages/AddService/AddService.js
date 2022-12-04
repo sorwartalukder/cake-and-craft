@@ -1,8 +1,10 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import useSetTitle from '../../hooks/useSetTitle';
 
 const AddService = () => {
+    const navigate = useNavigate()
     useSetTitle('Add Service - Cake & Craft')
 
     const handleAddItem = event => {
@@ -40,7 +42,7 @@ const AddService = () => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('added service')
-                    form.reset()
+                    navigate('/services')
                 }
             })
 
@@ -83,9 +85,11 @@ const AddService = () => {
                                 <textarea required name='description' className="input input-ghost input-bordered h-24 w-full mt-4" placeholder="Description" >
                                 </textarea>
                             </div>
-                            <input className='btn btn-active btn-primary mt-8 block mx-auto px-24' type="submit" value="add" />
+                            {/* <input className='btn btn-active btn-primary mt-8 block mx-auto px-24' type="submit" value="add" /> */}
+
                         </div>
                     </form>
+                    <button className='btn btn-active btn-primary mt-8 block mx-auto px-24'>this feature owner  admin</button>
                 </div>
             </div>
         </div>

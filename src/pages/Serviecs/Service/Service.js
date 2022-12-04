@@ -9,11 +9,11 @@ const Service = ({ service }) => {
 
     return (
         <div>
-            <div className="card bg-base-100 border shadow-xl" >
+            <div className="card bg-base-100 border shadow-xl h-full" >
 
                 <PhotoProvider >
                     <PhotoView src={img}>
-                        <figure><img className='w-full' src={img} alt="Shoes" /></figure>
+                        <figure><img className='w-full h-64' src={img} alt="Shoes" /></figure>
                     </PhotoView>
                 </PhotoProvider>
 
@@ -27,7 +27,7 @@ const Service = ({ service }) => {
                     <h4 className="card-title">Price:<span style={{ color: 'darkorange' }}>{price}TK</span></h4>
                     <div className="card-actions justify-between">
                         <Link to={`/services/${_id}`}><button className="badge badge-outline px-5 text-blue-900">Details</button></Link>
-                        <Link ><button className="badge badge-outline px-5 text-blue-900 ">Buy Now</button></Link>
+
                     </div>
                 </div>
             </div>
