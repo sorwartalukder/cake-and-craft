@@ -56,16 +56,16 @@ const Login = () => {
                                 <input required name='email' type="email" placeholder="Your Email" className="input input-ghost w-full input-bordered " />
                                 <input required name='password' type="password" placeholder="Your Password" className="input input-ghost w-full input-bordered " />
                             </div>
-                            <input className='btn btn-active btn-primary mt-8 block mx-auto px-14' type="submit" value="login" />
+                            <input className='btn btn-active btn-primary mt-8 block mx-auto px-14 hover:shadow-md hover:shadow-white' type="submit" value="login" />
                         </div>
                     </form>
                     <div className=' text-center mt-9 '>
                         <p className='font-bold mb-2'>Or Sign In with</p>
-                        <button onClick={handleLoginWithGoogle} className="btn btn-circle btn-light">
+                        <button onClick={handleLoginWithGoogle} className="btn btn-circle btn-light hover:shadow-sm hover:shadow-white">
                             <FaGoogle className='text-2xl text-blue-500' />
                         </button>
                     </div>
-                    <p className='text-center'>New to Cake & Craft <Link className='text-orange-600 font-bold' to='/register'>Register</Link></p>
+                    <p className='text-center'>New to Cake & Craft <Link className='text-orange-600 font-bold hover:text-primary' to='/register'>Register</Link></p>
                 </div>
             </div>
         </div>

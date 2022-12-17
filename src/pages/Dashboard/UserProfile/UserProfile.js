@@ -54,7 +54,7 @@ const UserProfile = () => {
                 </form>
                 <button
                     onClick={handleLogOut}
-                    className="btn btn-primary bg-gradient-to-r from-slate-900 to-yellow-600 border-0 px-6 text-white mt-8">Log out</button>
+                    className="btn btn-primary bg-gradient-to-r from-slate-900 to-yellow-600 border-0 px-6 text-white mt-8 hover:shadow-md hover:shadow-yellow-600">Log out</button>
             </div>
         </div>
     );

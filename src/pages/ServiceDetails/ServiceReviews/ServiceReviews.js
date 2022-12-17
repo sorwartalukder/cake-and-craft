@@ -67,14 +67,14 @@ const ServiceReviews = ({ service, setNewReview }) => {
                                 stars.map(star => <p
                                     key={star}
                                     onClick={() => setRatings(star)}
-                                ><HiStar /></p>)
+                                ><HiStar className='hover:shadow-md hover:shadow-orange-500 hover:rounded-full' /></p>)
                             }
                         </div>
                     </div>
                     <textarea required name='message' className="textarea textarea-bordered h-24 w-full mt-4" placeholder="Your message" >
                     </textarea>
 
-                    <input className='btn btn-active btn-primary px-14 block mx-auto' type="submit" value="feedback" />
+                    <input className='btn btn-active btn-primary px-14 block mx-auto hover:shadow-md hover:shadow-primary' type="submit" value="feedback" />
                 </form>
             </div>
 

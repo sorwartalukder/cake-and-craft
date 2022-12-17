@@ -11,9 +11,16 @@ const Footer = () => {
             </div>
             <div>
                 <span className="footer-title">Social</span>
-                <Link><FaFacebookSquare className='text-3xl text-blue-700' /></Link>
-                <Link><FaYoutube className='text-3xl text-red-700' /></Link>
-                <Link><FaInstagramSquare className='text-3xl text-pink-600' /></Link>
+
+                <a target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/cakeandcraftbd">
+                    <FaFacebookSquare className='text-3xl text-blue-700 hover:shadow-md hover:shadow-slate-900' />
+                </a>
+                <a target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/cakeandcraftbd">
+                    <FaYoutube className='text-3xl text-red-700 hover:shadow-md hover:shadow-slate-900' />
+                </a>
+                <a target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/cakeandcraftbd">
+                    <FaInstagramSquare className='text-3xl text-pink-600 hover:shadow-md hover:shadow-slate-900' />
+                </a>
 
 
             </div>

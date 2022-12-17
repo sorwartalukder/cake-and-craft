@@ -112,7 +112,7 @@ const CheckOutForm = ({ payProduct }) => {
                     }}
                 />
                 <button
-                    className="btn btn-primary bg-gradient-to-r from-slate-900 to-yellow-600 border-0 btn-sm px-6 text-white  block mx-auto mt-11"
+                    className="btn btn-primary bg-gradient-to-r from-slate-900 to-yellow-600 border-0 btn-sm px-6 text-white  block mx-auto mt-11 hover:shadow-md hover:shadow-yellow-600"
                     type="submit"
                     disabled={!stripe || !clientSecret || processing}>
                     Pay

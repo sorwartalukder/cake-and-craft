@@ -1,7 +1,11 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
+    let activeClass = {
+        color: "blue",
+        background: "none",
+    };
     return (
         <div>
             <div className="navbar bg-yellow-600 text-white">
@@ -22,19 +26,19 @@ const Dashboard = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-slate-900 text-white text-lg">
                         <li className='mx-auto'>
-                            <Link to="/">Home</Link>
+                            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to="/">Home</NavLink>
                         </li>
                         <li className='mx-auto'>
-                            <Link to="/dashboard">Profile</Link>
+                            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to="/dashboard/">Profile</NavLink>
                         </li>
                         <li className='mx-auto'>
-                            <Link to='/dashboard/my-orders'>My Orders</Link>
+                            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/dashboard/my-orders'>My Orders</NavLink>
                         </li>
                         <li className='mx-auto'>
-                            <Link to='/dashboard/userReviews'>My Reviews</Link>
+                            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/dashboard/userReviews'>My Reviews</NavLink>
                         </li>
                         <li className='mx-auto'>
-                            <Link to='/dashboard/addService'>Add Service</Link>
+                            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/dashboard/addService'>Add Service</NavLink>
                         </li>
                     </ul>
                 </div>

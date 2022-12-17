@@ -45,7 +45,7 @@ const ServiceDetails = () => {
                     </div>
                     <h4 className="card-title">Price:<span style={{ color: 'darkorange' }}>{price}TK</span></h4>
                     <h4 className="card-title">Ratting:<span style={{ color: 'darkorange' }}></span></h4>
-                    <Link to={`/buy-now/${_id}`}><button className="badge badge-outline px-10 py-5 text-2xl font-bold  text-blue-900 my-5 ">Buy Now</button></Link>
+                    <Link to={`/buy-now/${_id}`}><button className="badge badge-outline px-10 py-5 text-2xl font-bold  text-blue-900 my-5 hover:shadow-md hover:shadow-slate-900">Buy Now</button></Link>
                 </div>
             </div>
 
@@ -58,7 +58,7 @@ const ServiceDetails = () => {
                         :
                         <div className='my-2'>
                             <h4 className="text-2xl font-semibold"> Please login to add a review.</h4>
-                            <Link to='/login'><button className="btn btn-active btn-primary text-lg mt-5 px-12">log in</button></Link>
+                            <Link to='/login'><button className="btn btn-active btn-primary text-lg mt-5 px-12 hover:shadow-md hover:shadow-slate-900 hover:bg-slate-900">log in</button></Link>
                         </div>
                 }
                 <div className='mb-10'>

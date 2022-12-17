@@ -1,17 +1,29 @@
 import React, { useContext } from 'react';
 import './Header.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaPhoneAlt, FaUser } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
+    let activeClass = {
+        color: "blue",
+        background: "none",
+    };
     const navLink = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/services'>Services</Link></li>
-        <li><Link to='/blogs'> Blogs</Link></li>
-        {user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        <li>
+            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/'>Home</NavLink>
+        </li>
+        <li>
+            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/services'>Services</NavLink>
+        </li>
+        <li>
+            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/blogs'> Blogs</NavLink>
+        </li>
+        {user && <li>
+            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/dashboard'>Dashboard</NavLink>
+        </li>
         }
     </>
 
@@ -58,22 +70,24 @@ const Header = () => {
                     {
                         user?.uid ?
                             <>
-                                <button onClick={handleLogOut} className="btn btn-active btn-primary">Log Out</button>
-                                <div className="avatar online mx-4">
-                                    <div className="w-16 rounded-full ring ring-primary">
+                                <button onClick={handleLogOut} className="btn btn-primary hover:shadow-md hover:shadow-white hover:bg-slate-900">Log Out</button>
+                                <Link to='/dashboard'>
+                                    <div className="avatar online mx-4">
+                                        <div className="w-16 rounded-full ring ring-primary hover:ring-slate-900 hover:shadow-md hover:shadow-slate-900">
 
-                                        {
-                                            user?.photoURL ?
-                                                <img src={user?.photoURL} alt='' />
-                                                :
-                                                <p className='text-6xl'><FaUser /></p>
+                                            {
+                                                user?.photoURL ?
+                                                    <img src={user?.photoURL} alt='' />
+                                                    :
+                                                    <p className='text-6xl'><FaUser /></p>
 
-                                        }
+                                            }
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             </>
                             :
-                            <Link to='/login' className="btn btn-active btn-primary">Log In</Link>
+                            <Link to='/login' className="btn btn-primary hover:shadow-md hover:shadow-white hover:bg-slate-900">Log In</Link>
                     }
                 </div>
             </div>

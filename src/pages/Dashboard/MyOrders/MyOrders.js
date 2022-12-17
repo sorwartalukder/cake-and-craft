@@ -77,7 +77,7 @@ const MyOrders = () => {
                                 <td>
                                     <label
                                         onClick={() => handleCancel(order._id)}
-                                        className="btn btn-sm btn-error"
+                                        className="btn btn-sm btn-error hover:shadow-md hover:shadow-red-500"
                                     >
                                         Cancel </label>
                                 </td>
@@ -85,13 +85,13 @@ const MyOrders = () => {
                                     {
                                         order.paid ?
                                             <label
-                                                className="btn btn-active btn-primary btn-sm px-5 text-white"
+                                                className="btn btn-active btn-primary btn-sm px-5 text-white hover:shadow-md hover:shadow-slate-900"
                                             >
                                                 Paid</label>
                                             :
                                             <Link to={`/dashboard/my-orders/${order._id}`}>
                                                 <label
-                                                    className="btn btn-primary bg-gradient-to-r from-slate-900 to-yellow-600 border-0 btn-sm px-6 text-white"
+                                                    className="btn btn-primary bg-gradient-to-r from-slate-900 to-yellow-600 border-0 btn-sm px-6 text-white hover:shadow-md hover:shadow-yellow-600"
                                                 >
                                                     Pay</label>
                                             </Link>

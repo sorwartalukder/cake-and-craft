@@ -49,7 +49,7 @@ const Register = () => {
                                 <input required name='email' type="email" placeholder="Your Email" className="input input-ghost w-full input-bordered " />
                                 <input required name='password' type="password" placeholder="Your Password" className="input input-ghost w-full input-bordered " />
                             </div>
-                            <input className='btn btn-active btn-primary mt-8 block mx-auto px-14' type="submit" value="register" />
+                            <input className='btn btn-active btn-primary mt-8 block mx-auto px-14 hover:shadow-md hover:shadow-white' type="submit" value="register" />
                         </div>
                     </form>
                 </div>

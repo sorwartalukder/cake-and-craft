@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div >
+    <div>
       <RouterProvider router={routes}>
         <Toaster />
       </RouterProvider>

@@ -125,7 +125,7 @@ const BuyNow = () => {
                     </div>
 
                 </div>
-                <input className='btn bg-gradient-to-r from-slate-900 to-yellow-600 border-0 px-11 mt-11 block mx-auto' value='Submit' type="submit" />
+                <input className='btn bg-gradient-to-r from-slate-900 to-yellow-600 border-0 px-11 mt-11 block mx-auto hover:shadow-md hover:shadow-yellow-600' value='Submit' type="submit" />
             </form>
 
         </div>
