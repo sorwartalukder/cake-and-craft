@@ -15,6 +15,7 @@ import Register from "../../pages/Register/Register";
 import BuyNow from "../../pages/ServiceDetails/BuyNow/BuyNow";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Serviecs/Services";
+import Support from "../../pages/Support/Support";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const routes = createBrowserRouter([
@@ -31,6 +32,10 @@ const routes = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
+            },
+            {
+                path: '/support',
+                element: <Support />,
             },
             {
                 path: '/services/:id',

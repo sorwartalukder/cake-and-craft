@@ -21,6 +21,10 @@ const Header = () => {
         <li>
             <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/blogs'> Blogs</NavLink>
         </li>
+        <li>
+            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)}
+                to='/support'> Support</NavLink>
+        </li>
         {user && <li>
             <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to='/dashboard'>Dashboard</NavLink>
         </li>

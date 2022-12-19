@@ -57,6 +57,7 @@ const AddService = () => {
                             <h2 className="text-4xl pb-8 text-center font-semibold text-blue-500">Add Service</h2>
                             <div className='grid grid-cols-1 gap-4'>
                                 <div className='md:flex'>
+                                    {/* service name */}
                                     <input required name='name' type="text" placeholder="Service Name" className="input input-ghost w-full input-bordered mb-4 md:mr-4" />
                                     <input required name='price' type="text" placeholder="Price" className="input input-ghost w-full input-bordered " />
                                 </div>
@@ -70,8 +71,17 @@ const AddService = () => {
 
                                 <label className='text-xl  font-semibold text-blue-500'>Ingredient (Must add 7 Ingredient)</label>
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                                    <input required name='ingredient1' type="text" placeholder="Ingredient-1" className="input input-ghost w-full input-bordered " />
-                                    <input required name='ingredient2' type="text" placeholder="Ingredient-2" className="input input-ghost w-full input-bordered " />
+
+                                    <input
+                                        required name='ingredient1' type="text"
+                                        placeholder="Ingredient-1"
+                                        className="input input-ghost w-full input-bordered "
+                                    />
+
+                                    <input required name='ingredient2' type="text"
+                                        placeholder="Ingredient-2"
+                                        className="input input-ghost w-full input-bordered "
+                                    />
                                     <input required name='ingredient3' type="text" placeholder="Ingredient-3" className="input input-ghost w-full input-bordered " />
                                     <input required name='ingredient4' type="text" placeholder="Ingredient-4" className="input input-ghost w-full input-bordered " />
                                     <input required name='ingredient5' type="text" placeholder="Ingredient-5" className="input input-ghost w-full input-bordered " />

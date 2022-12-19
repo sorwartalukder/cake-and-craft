@@ -8,7 +8,7 @@ import ServicesSpecialty from '../ServicesSpecialty/ServicesSpecialty';
 const Home = () => {
     useSetTitle('Cake & Craft')
     return (
-        <div className='bg-slate-200'>
+        <div>
             <HomeHeader></HomeHeader>
             <ServicesSpecialty></ServicesSpecialty>
             <HomeServices></HomeServices>

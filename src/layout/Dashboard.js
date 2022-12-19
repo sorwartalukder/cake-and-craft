@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     let activeClass = {
@@ -26,7 +26,7 @@ const Dashboard = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-slate-900 text-white text-lg">
                         <li className='mx-auto'>
-                            <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to="/">Home</NavLink>
+                            <Link to="/">Home</Link>
                         </li>
                         <li className='mx-auto'>
                             <NavLink style={({ isActive }) => (isActive ? activeClass : undefined)} to="/dashboard/">Profile</NavLink>

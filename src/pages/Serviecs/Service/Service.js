@@ -24,7 +24,7 @@ const Service = ({ service }) => {
                     )}...</p>
                     <h4 className="card-title">Price:<span style={{ color: 'darkorange' }}>{price}TK</span></h4>
                     <div className="card-actions justify-between">
-                        <Link to={`/services/${_id}`}><button className="badge badge-outline px-5 text-blue-900 hover:shadow-md hover:shadow-slate-900">Details</button></Link>
+                        <button className="badge badge-outline px-5 text-blue-900 hover:shadow-md hover:shadow-slate-900">Details</button>
 
                     </div>
                 </div>

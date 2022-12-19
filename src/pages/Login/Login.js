@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
@@ -24,6 +25,7 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 // const user = result.user;
+                toast.success('Log In Successfully.')
                 navigate(from, { replace: true })
             })
             .catch((error) => {
@@ -34,8 +36,8 @@ const Login = () => {
     const handleLoginWithGoogle = () => {
         loginWithGoogle(googleProvider)
             .then((result) => {
-                const user = result.user;
-                console.log(user)
+                // const user = result.user;
+                toast.success('Log In Successfully.')
                 navigate(from, { replace: true })
             }).catch((error) => {
                 // const errorMessage = error.message;
@@ -47,7 +49,7 @@ const Login = () => {
     return (
         <div>
             <Header></Header>
-            <div className='services-container '>
+            <div className='services-container min-h-screen'>
                 <div className='w-11/12 md:w-2/3 lg:w-1/3 mx-auto my-24 bg-gray-900 p-16 text-white rounded-xl'>
                     <form onSubmit={handleLogin}>
                         <div >
