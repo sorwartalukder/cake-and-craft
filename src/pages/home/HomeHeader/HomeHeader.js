@@ -8,7 +8,7 @@ const HomeHeader = () => {
 
     return (
         <div>
-            <div className='  bg-slate-900'>
+            <div className='bg-slate-900'>
                 <div className=' text-center font-bold text-white py-32 lg:py-60'>
                     <h1 className='text-4xl lg:text-7xl '>Made With Love. <br /> I am ready. <br /> You ready?</h1>
                     <Link to='/services'>

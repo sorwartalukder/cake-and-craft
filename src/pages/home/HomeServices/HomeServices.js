@@ -1,17 +1,23 @@
 import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
+import Loading from '../../../components/Loading/Loading';
 import Service from '../../Serviecs/Service/Service';
 
 
 const HomeServices = () => {
-    const homeSvrviecs = useLoaderData()
+    const homeServices = useLoaderData()
+    const navigation = useNavigation();
+    //data loading spinner
+    if (navigation.state === "loading") {
+        return <Loading></Loading>
+    }
     return (
         <div className='mb-24'>
             <h1 className='text-center font-bold text-4xl mt-8 py-4'>Special services</h1>
             <div className='grid lg:grid-cols-3 gap-20 services-container'>
                 {
-                    homeSvrviecs.map(service => <Service
+                    homeServices.map(service => <Service
                         key={service._id}
                         service={service}
                     ></Service>)
