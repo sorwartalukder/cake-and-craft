@@ -16,6 +16,7 @@ import BuyNow from "../../pages/ServiceDetails/BuyNow/BuyNow";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Serviecs/Services";
 import Support from "../../pages/Support/Support";
+import UserDetails from "../../pages/User/UserDetails/UserDetails";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const routes = createBrowserRouter([
@@ -44,7 +45,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/buy-now/:id',
-                element: <BuyNow></BuyNow>,
+                element: <PrivateRoutes> <BuyNow></BuyNow></PrivateRoutes>,
                 loader: ({ params }) => fetch(`https://cake-and-craft-server.vercel.app/services/${params.id}`)
             },
 
@@ -63,6 +64,10 @@ const routes = createBrowserRouter([
     {
         path: '/blogs',
         element: <Blogs></Blogs>
+    },
+    {
+        path: '/userDetails/:id',
+        element: <PrivateRoutes><UserDetails /></PrivateRoutes>
     },
 
     {

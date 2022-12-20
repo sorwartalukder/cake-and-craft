@@ -17,7 +17,7 @@ const Services = () => {
             })
     }, [setIsLoading])
     return (
-        <div className='mb-40'>
+        <div className='mb-40 min-h-screen'>
             {
                 isLoading ?
                     <>

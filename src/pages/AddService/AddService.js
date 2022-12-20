@@ -181,8 +181,7 @@ const AddService = () => {
                                 {errors.description && <p className='text-red-600'>{errors.description?.message}</p>}
 
                             </div>
-                            <input className='btn btn-active btn-primary mt-8 block mx-auto px-24 hover:shadow-md hover:shadow-white' type="submit" value="add Service" />
-
+                            <input className='btn btn-active btn-primary mt-8 block mx-auto md:px-24 px-12 hover:shadow-md hover:shadow-white' type="submit" value="add Service" />
                         </div>
                     </form>
                 </div>

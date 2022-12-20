@@ -46,7 +46,7 @@ const Payment = () => {
                 </div>
 
             </div>
-            <div className='w-96 my-12 mx-auto'>
+            <div className='max-w-[384px] my-12 mx-auto'>
                 <Elements stripe={stripePromise}>
                     <CheckOutForm
                         payProduct={payProduct}

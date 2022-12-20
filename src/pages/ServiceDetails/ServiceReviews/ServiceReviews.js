@@ -74,7 +74,7 @@ const ServiceReviews = ({ service, setNewReview }) => {
                     <textarea required name='message' className="textarea textarea-bordered h-24 w-full mt-4" placeholder="Your message" >
                     </textarea>
 
-                    <input className='btn btn-active btn-primary px-14 block mx-auto hover:shadow-md hover:shadow-primary' type="submit" value="feedback" />
+                    <input className='btn btn-active btn-primary px-14 block mx-auto hover:shadow-md hover:shadow-yellow-500' type="submit" value="feedback" />
                 </form>
             </div>
 
