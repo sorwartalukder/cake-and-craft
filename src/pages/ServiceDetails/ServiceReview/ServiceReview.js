@@ -9,8 +9,8 @@ const ServiceReview = ({ serviceReview }) => {
         <div className='mt-5 bg-zinc-400 rounded-xl p-3'>
             <Link to={`/userDetails/${userId}`}>
                 <div className=' flex items-center'>
-                    <div className="avatar online ">
-                        <div className="w-7 rounded-full ring ring-primary">
+                    <div className="avatar online">
+                        <div className="w-7 rounded-full ring ring-primary  hover:ring-blue-700 hover:shadow-md hover:shadow-yellow-500">
                             {
                                 userPhotoURL ?
                                     <img src={userPhotoURL} alt='' />
@@ -19,7 +19,7 @@ const ServiceReview = ({ serviceReview }) => {
                             }
                         </div>
                     </div>
-                    <h5 className='text-xl font-semibold  ml-3'>{userName}</h5>
+                    <h5 className='text-xl font-semibold  ml-3 hover:text-primary'>{userName}</h5>
                 </div>
             </Link>
 
