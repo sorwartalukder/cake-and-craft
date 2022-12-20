@@ -7,6 +7,7 @@ import MyOrders from "../../pages/Dashboard/MyOrders/MyOrders";
 import Payment from "../../pages/Dashboard/Payment/Payment";
 import UserProfile from "../../pages/Dashboard/UserProfile/UserProfile";
 import Home from "../../pages/home/Home/Home";
+import ForgotPass from "../../pages/Login/ForgotPass";
 import Login from "../../pages/Login/Login";
 import MyReviews from "../../pages/MyReviews/MyReviews";
 import UpdateReview from "../../pages/MyReviews/UpdateReview/UpdateReview";
@@ -55,6 +56,10 @@ const routes = createBrowserRouter([
     {
         path: '/login',
         element: <Login></Login>
+    },
+    {
+        path: '/reset/password',
+        element: <ForgotPass />
     },
     {
         path: '/register',

@@ -22,7 +22,6 @@ const ServiceReview = ({ serviceReview }) => {
                     <h5 className='text-xl font-semibold  ml-3 hover:text-primary'>{userName}</h5>
                 </div>
             </Link>
-
             <p className='ml-5'>{feedback}</p>
         </div>
     );

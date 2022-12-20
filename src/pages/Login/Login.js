@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -11,7 +12,7 @@ const Login = () => {
     useSetTitle('Log In - Cake & Craft')
 
     const { login, loginWithGoogle } = useContext(AuthContext)
-
+    const [loginError, setLoginError] = useState('')
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate()
     const location = useLocation()
@@ -19,6 +20,7 @@ const Login = () => {
 
     const handleLogin = event => {
         event.preventDefault()
+        setLoginError('')
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
@@ -29,18 +31,21 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch((error) => {
-                // const errorMessage = error.message;
+                const errorMessage = error.message;
+                setLoginError(errorMessage)
             });
     }
 
     const handleLoginWithGoogle = () => {
+        setLoginError('')
         loginWithGoogle(googleProvider)
             .then((result) => {
                 // const user = result.user;
                 toast.success('Log In Successfully.')
                 navigate(from, { replace: true })
             }).catch((error) => {
-                // const errorMessage = error.message;
+                const errorMessage = error.message;
+                setLoginError(errorMessage)
             });
 
     }
@@ -57,6 +62,8 @@ const Login = () => {
                             <div className='grid grid-cols-1 gap-4'>
                                 <input required name='email' type="email" placeholder="Your Email" className="input input-ghost w-full input-bordered " />
                                 <input required name='password' type="password" placeholder="Your Password" className="input input-ghost w-full input-bordered " />
+                                {loginError && <p className='text-red-600'>{loginError}</p>}
+                                <Link className='text-primary' to='/reset/password'>Forgot password?</Link>
                             </div>
                             <input className='btn btn-active btn-primary mt-8 block mx-auto px-14 hover:shadow-md hover:shadow-white' type="submit" value="login" />
                         </div>
