@@ -8,9 +8,9 @@
 <br />
 <a href="https://drive.google.com/file/d/1_P_F6B3k6TGiXZJTBDMcrGuK4G_xPKko/view?usp=share_link">Download developer resume</a>
 
-
-#Inspiration design
-
+<br />
+<!-- Inspiration design -->
+<h1>Inspiration design</h1>
 https://preview.themeforest.net/item/roofix-roofing-services-wordpress-theme/full_screen_preview/27855848?_ga=2.232734879.1044135846.1667826000-1177760069.1658420376
 
 https://preview.themeforest.net/item/techbiz-it-solution-service-wordpress-theme/full_screen_preview/40006717?_ga=2.232734879.1044135846.1667826000-1177760069.1658420376
@@ -34,7 +34,7 @@ https://preview.themeforest.net/item/taxseco-online-taxi-service-wordpress-theme
 <li>Express.js</li>
 <li>MongoDB</li>
 <li>Firebase</li>
-<li>JWT</li>
+<li>Stripe payment</li>
 </ol>
 
 <!-- developer profile -->
